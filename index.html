@@ -1,49 +1,174 @@
-<!-- We must always begin with an HTML label to show the browser that this is a document with an HTML format. -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Instagram Post</title>
-  <!-- <link href="style.css" rel="stylesheet" type="text/css"> -->
-  <link href="/style.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/072e5df971.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Feed </title>
+    <!-- Bootstrap Styling link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Fontawesome link (For the icons) -->
+    <script src="https://kit.fontawesome.com/072e5df971.js" crossorigin="anonymous"></script>
 </head>
 
-
 <body>
-  <div class="post">
+    <style>
+        .nav-pill .nav-link{
+            color: grey;
+        }
+        .nav-pill .nav-link.active{
+            color: blue;
+        }
+    </style>
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-light py-3">
+        <div class="container-fluid">
+            <div class="d-flex w-100 justify-content-between">
+                <div>
+                    <i class="fa-brands fa-instagram fa-xl"></i>
+                    <h4 class="d-inline-block fs-4">Instagram</h4>
+                </div>
+                <div class="d-flex align-right justify-content-end">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-success me-2" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        Create a new post
+                    </button>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-gear"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Accesibility</a></li>
+                            <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <div class="post-header">
-      <i class="fa-brands fa-html5"></i>
-      <div class="titulo">
-        <p><b>HTML5</b></p>
-        <p>Rigoberto</p>
-      </div>
-      <i class="fa-solid fa-ellipsis-vertical"></i>
+    <!-- Modal Body -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create a new post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Caption:</h6>
+                    <textarea class="form-control" placeholder="Add the caption of your post here"
+                        id="floatingTextarea2"></textarea>
+                    <div class="row p-2">
+                        <button class="col-1 border rounded p-1 m-1 btn-light">
+                            <i class="fa-solid fa-camera"></i>
+                        </button>
+                        <button class="col-1 border rounded p-1 m-1 btn-light">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Publish</button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="post-img">
-      <img src="./paisaje.jpg" class="imagen" alt="Paisaje">
+  
+    <div class="container-fluid p-2">
+        <ul class="nav nav-pill justify-content-center" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                    role="tab" aria-controls="home" aria-selected="true"><i
+                        class="fa-solid fa-table-cells"></i></a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+                    role="tab" aria-controls="profile" aria-selected="false"><i class="fa-solid fa-square"></i></a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <!-- 3 photos per row grid -->
+            <div class="tab-pane fade show active overflow-hidden" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="row">
+                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://www.fanaticosdelasmascotas.cl/wp-content/uploads/2024/03/imagen_destacada-3.jpg" class="img-fluid w-100" alt=""></div>
+                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://reportei.com/wp-content/uploads/2022/06/personas-.jpg" class="img-fluid w-100" alt=""></div>
+                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://res.cloudinary.com/worldpackers/image/upload/c_fill,f_auto,q_auto,w_1024/v1/guides/article_cover/waoawmquyowhg9kygnbj" class="img-fluid w-100" alt=""></div>
+                </div>
+                <div class="row">
+                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://image-service.usw2.wp-prod-us.cultureamp-cdn.com/QJQRdQhrreHMoUdcJ5CVvj4TzE0=/1440x0/cultureampcom/production/f34/fd9/830/f34fd98303160743bfe9f398/blog-employee-personas.png" class="img-fluid w-100" alt=""></div>
+                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://img.freepik.com/fotos-premium/torre-eiffel-fondo-pantalla-hd-imagen-fotografica_993236-4241.jpg?w=740" class="img-fluid w-100" alt=""></div>
+                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://phantom-marca-mx.unidadeditorial.es/230025dab842ab5f583d89d288d232b7/resize/660/f/webp/mx/assets/multimedia/imagenes/2024/05/17/17159020412951.jpg" class="img-fluid w-100" alt=""></div>
+                </div>
+                <div class="row">
+                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://media.istockphoto.com/id/456745017/es/foto/silueta-de-feliz-familia-y-perro.jpg?s=612x612&w=0&k=20&c=7Bzo7hWsa1qnyAl7J3Jj5jgBlUsHNjGmXlBQLPfiBug=" class="img-fluid w-100" alt=""></div>
+                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://concepto.de/wp-content/uploads/2018/09/lenguaje-de-programaci%C3%B3n-e1537466894547.jpg" class="img-fluid w-100" alt=""></div>
+                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://img.freepik.com/foto-gratis/mujer-joven-ayudando-su-amiga-sesion-estudio_23-2149265684.jpg?w=740&t=st=1726689334~exp=1726689934~hmac=dc840b6e4dbfb0fb8e4578c2d3c86438e9bebc86ef1ba3521247ce5e62943547" class="img-fluid w-100" alt=""></div>
+                </div>
+            </div>
+          
+            <div class="tab-pane fade overflow-hidden" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="row my-4">
+                    <div class="col-6 mx-auto border rounded p-0">
+                        <div class="d-flex p-2">
+                            <div class="w-100 fs-4">Gordo bachicha</div>
+                            <small class="align-bottom">08/26</small>
+                        </div>
+                        <img style="object-fit: cover;" src="https://www.fanaticosdelasmascotas.cl/wp-content/uploads/2024/03/imagen_destacada-3.jpg" class="img-fluid w-100 col-12" alt=""/>
+                        <div class="p-2">
+                            <strong>204 Likes</strong>
+                            <p>Toma solcito a la orilla del mar!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <div class="col-6 mx-auto border rounded p-0">
+                        <div class="d-flex p-2">
+                            <div class="w-100 fs-4">Mykonos</div>
+                            <small>04/09</small>
+                        </div>
+                        <img style="object-fit: cover;" src="https://res.cloudinary.com/worldpackers/image/upload/c_fill,f_auto,q_auto,w_1024/v1/guides/article_cover/waoawmquyowhg9kygnbj" class="img-fluid w-100 col-12" alt=""/>
+                        <div class="p-2">
+                            <strong>26985 Likes</strong>
+                            <p>Playas de ensueño</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <div class="col-6 mx-auto border rounded p-0">
+                        <div class="d-flex p-2">
+                            <div class="w-100 fs-4">Cristiano</div>
+                            <small>06/10</small>
+                        </div>
+                        <img style="object-fit: cover;" src="https://phantom-marca-mx.unidadeditorial.es/230025dab842ab5f583d89d288d232b7/resize/660/f/webp/mx/assets/multimedia/imagenes/2024/05/17/17159020412951.jpg" class="img-fluid w-100 col-12" alt=""/>
+                        <div class="p-2">
+                            <strong>204 Likes</strong>
+                            <p>Jugador de elite, gracias a sus goles y su actuacion.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="post-icons">
 
-      <i class="fa fa-heart"></i>
-      <i class="fa fa-comment"></i>
-      <i class="fa fa-paper-plane"></i>
-      <i class="fa fa-bookmark"></i>
-    </div>
-
-    <div class="post-body">
-      <p>Liked by <strong>4GeeksAcademy, html5, Web</strong>,and <b>100,000 others</b></p>
-      <br>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-        erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
-        tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-        consequat.</p>
-    </div>
-  </div>
+    <!-- Bootstrap Functionalities link  -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
